@@ -13,8 +13,8 @@ services:
       - MYSQL_USER=mohammad
       - MYSQL_PASSWORD=pasha2905
     expose:
-      - 3306
-      - 33060
+      - "3306"
+      - "33060"
 
   wordpress:
     image: wordpress:latest
