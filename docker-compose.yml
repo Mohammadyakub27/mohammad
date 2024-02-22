@@ -1,14 +1,13 @@
 version: '3.3'
-
 services:
   db:
     image: mysql:8.0.19
-    command: 'default-authentication-plugin=mysql_native_password'
+    command: --default-authentication-plugin=mysql_native_password
     volumes:
       - db_data:/var/lib/mysql
     restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD=123456789
+      - MYSQL_ROOT_PASSWORD=mohammadpasha
       - MYSQL_DATABASE=wordpress
       - MYSQL_USER=mohammad
       - MYSQL_PASSWORD=pasha2905
@@ -26,8 +25,6 @@ services:
       - WORDPRESS_DB_USER=mohammad
       - WORDPRESS_DB_PASSWORD=pasha2905
       - WORDPRESS_DB_NAME=wordpress
-    depends_on:
-      - db
 
-volumes: 
+volumes:
   db_data:
