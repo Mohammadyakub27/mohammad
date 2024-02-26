@@ -7,24 +7,22 @@ services:
       - db_data:/var/lib/mysql
     restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD=mohammadpasha
-      - MYSQL_DATABASE=wordpress
-      - MYSQL_USER=mohammad
-      - MYSQL_PASSWORD=pasha2905
+      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_DATABASE: new
+      MYSQL_USER: yakub27
+      MYSQL_PASSWORD: yakub2905
     expose:
       - "3306"
-      - "33060"
-
+      - "33060" 
   wordpress:
     image: wordpress:latest
     ports:
-      - "80:80"
+      - "80:80" 
     restart: always
     environment:
-      - WORDPRESS_DB_HOST=db
-      - WORDPRESS_DB_USER=mohammad
-      - WORDPRESS_DB_PASSWORD=pasha2905
-      - WORDPRESS_DB_NAME=wordpress
-
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: yakub27
+      WORDPRESS_DB_PASSWORD: yakub2905
+      WORDPRESS_DB_NAME: new
 volumes:
   db_data:
